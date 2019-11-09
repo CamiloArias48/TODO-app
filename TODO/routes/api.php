@@ -21,4 +21,8 @@ Route::post('login', 'ApiAuthController@login');
 Route::middleware('auth:api')->group( function () {
     Route::get('user', 'ApiAuthController@user');
     Route::get('logout', 'ApiAuthController@logout');
+    Route::get('get', 'ApiRestFullController@get');
+    Route::post('post', 'ApiRestFullController@post');
+    Route::put('put/{id}', 'ApiRestFullController@put');
+    Route::delete('delete/{id}', 'ApiRestFullController@delete');
 }); 
