@@ -68913,8 +68913,8 @@ if (document.getElementById('root')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Users\Usuario\Documents\ProgramacionProyectos\TODO-app\TODO\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Users\Usuario\Documents\ProgramacionProyectos\TODO-app\TODO\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\PC-2\Desktop\TODO-app\TODO\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\PC-2\Desktop\TODO-app\TODO\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
