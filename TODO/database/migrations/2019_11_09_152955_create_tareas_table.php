@@ -17,11 +17,17 @@ class CreateTareasTable extends Migration
             $table->bigIncrements('id');
             $table->string('titulo');
             $table->string('descripcion');
-            $table->integer('estado_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('estado_id');
             $table->timestamps();
 
             $table->foreign('estado_id')
                   ->references('id')->on('estados')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
+
+            $table->foreign('user_id')
+                  ->references('id')->on('users')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');
         });
