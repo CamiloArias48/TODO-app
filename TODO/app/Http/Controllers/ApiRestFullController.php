@@ -9,11 +9,17 @@ class ApiRestFullController extends Controller
 {
 
     public function get(Request $request){
-        $task = Tarea::where('user_id', $request->user()->id )
+        $tasks = Tarea::where('user_id', $request->user()->id )
                      ->where('estado_id', "!=", 4)
                      ->get();
 
-        return response()->json(["data" => $task], 200);
+        foreach ($tasks as $task) {
+            $task->routeEdit = route('api.put',$task->id);
+            $task->routeDelete = route('api.delete',$task->id);
+        }
+        
+
+        return response()->json(["data" => $tasks], 200);
     }
 
 
@@ -33,6 +39,10 @@ class ApiRestFullController extends Controller
         ]);
 
         $task->save();
+
+        $task->routeEdit = route('api.put',$task->id);
+        $task->routeDelete = route('api.delete',$task->id);
+
         return response()->json(["newTask" => $task], 200);
     }
 
@@ -48,6 +58,8 @@ class ApiRestFullController extends Controller
             $task->estado_id = $request->estado_id;
 
             $task->save();
+            $task->routeEdit = route('api.put',$task->id);
+        $task->routeDelete = route('api.delete',$task->id);
             return response()->json(["msg" => "updated", "data" => $task],200);
         }
 

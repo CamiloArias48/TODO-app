@@ -15,14 +15,14 @@ use Illuminate\Http\Request;
 
 
 Route::post('register', 'ApiAuthController@register');
-Route::post('login', 'ApiAuthController@login');
+Route::post('login', 'ApiAuthController@login')->name('api.login');
 
 
 Route::middleware('auth:api')->group( function () {
-    Route::get('user', 'ApiAuthController@user');
+    Route::get('user', 'ApiAuthController@user')->name('api.user');
     Route::get('logout', 'ApiAuthController@logout');
-    Route::get('get', 'ApiRestFullController@get');
-    Route::post('post', 'ApiRestFullController@post');
-    Route::put('put/{id}', 'ApiRestFullController@put');
-    Route::delete('delete/{id}', 'ApiRestFullController@delete');
+    Route::get('get', 'ApiRestFullController@get')->name('api.get');
+    Route::post('post', 'ApiRestFullController@post')->name('api.post');
+    Route::put('put/{id}', 'ApiRestFullController@put')->name('api.put');
+    Route::delete('delete/{id}', 'ApiRestFullController@delete')->name('api.delete');
 }); 

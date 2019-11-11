@@ -67,6 +67,15 @@
          
          <div id="root">LOADING...</div>    
     
+    <script type="text/javascript">
+        var routes = {
+            apiLogin : "{{route('api.login')}}",
+            apiGet : "{{route('api.get')}}",
+            apiUser : "{{route('api.user')}}",
+            apiPost : "{{route('api.post')}}",
+           
+         }
+    </script>
     <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>
