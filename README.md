@@ -1,2 +1,6 @@
 # TODO-app
-Aplicación TODO en Laravel
+Aplicación TODO list
+
+Framework: Laravel
+Frontend: React Js, Bootstrap
+Librerias: React-router
